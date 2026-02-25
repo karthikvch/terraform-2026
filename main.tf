@@ -2,10 +2,10 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = local.final_bucket_name
-  tags = {
-    Environment = var.environment
-    Project     = local.project
-  }
+module "s3_module" {
+  source       = "./modules/s3"
+  environment  = var.environment
+  project_name = var.project_name
+  bucket_name  = var.bucket_name
+
 }
