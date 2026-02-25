@@ -1,2 +1,3 @@
-aws_region = "us-east-1"
-bucket_name = "data-lake-karthik-123"
+aws_region  = "us-east-1"
+environment = "dev"
+bucket_name = "data-lake"
