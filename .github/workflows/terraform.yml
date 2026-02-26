@@ -41,7 +41,11 @@ jobs:
       - name: Terraform Validate
         working-directory: ${{ env.ENV_DIR }}
         run: terraform validate
-
+      - name: Debug Working Directory
+        run: |
+          echo "Selected working directory: ${{ env.ENV_DIR }}"
+          echo "Listing files:"
+          ls -la ${{ env.ENV_DIR }}
       - name: Terraform Plan
         working-directory: ${{ env.ENV_DIR }}
         run: terraform plan
